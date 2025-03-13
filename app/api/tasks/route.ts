@@ -1,12 +1,23 @@
-import tasks from "@/app/data/tasks.json";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
-  return NextResponse.json(tasks, { status: 200 });
+export async function GET(req: NextRequest) {
+  return NextResponse.json(
+    { message: "Voici une requête GET" },
+    { status: 200 }
+  );
 }
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  tasks.push(body);
-  return NextResponse.json(tasks, { status: 200 });
+  return NextResponse.json(
+    { message: "Les données sont enregistrées" },
+    { status: 200 }
+  );
+}
+
+export async function PUT(req: NextRequest) {
+  return NextResponse.json(
+    { message: "Voici une requête PUT" },
+    { status: 200 }
+  );
 }
