@@ -17,7 +17,7 @@ export default function TaskDetail({ params }: { params: { id: string } }) {
     });
 
     if (response.ok) {
-      router.push("/tasks"); // Redirige vers la liste des tâches
+      router.push("/tasks");
     } else {
       console.error("Erreur lors de la suppression de la tâche");
     }
@@ -29,7 +29,6 @@ export default function TaskDetail({ params }: { params: { id: string } }) {
         <h1 className="text-3xl font-bold text-gray-900 text-center">{task.title}</h1>
         <p className="text-gray-600 mt-2 text-center">{task.description}</p>
 
-        {/* Informations supplémentaires */}
         <div className="mt-4 space-y-2 text-center">
           <p className="text-gray-700">
             <span className="font-semibold">Responsable :</span> {task.responsable}
@@ -42,7 +41,6 @@ export default function TaskDetail({ params }: { params: { id: string } }) {
           </p>
         </div>
 
-        {/* Boutons d'action */}
         <div className="mt-6 flex justify-center gap-4">
           <Link
             href={`/edit-task/${task.id}`}

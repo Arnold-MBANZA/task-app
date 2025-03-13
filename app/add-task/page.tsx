@@ -1,12 +1,9 @@
-import React from 'react'
-import FormTask from '../components/form'
-import Link from 'next/link'
+import FormTask from '../components/form';
 
-export default function 
-() {
+export default function AddTask() { // Ajout du nom d'affichage
   return (
     <div className='max-w-5xl mx-auto p-6'>
-        <FormTask />
+      <FormTask />
     </div>
-  )
+  );
 }
